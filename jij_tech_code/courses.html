@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses - JIJ TECHNOLOGIES</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+    body {
+      background: #f4f7fb;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(90deg, #00b4d8, #03045e);
+      color: #fff;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      border-bottom: 4px solid #90e0ef;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #f8f8f8;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #90e0ef;
+    }
+
+    @media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .left h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .left p {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .tags {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .left h1 {
+    font-size: 28px;
+  }
+
+  .left p {
+    font-size: 15px;
+  }
+
+  .buttons button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+    .courses {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .courses h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #203a43;
+    }
+    .course-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .course-card {
+      background: #dadde6;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.6s ease forwards;
+      animation-delay: 0.3s;
+      opacity: 0;
+    }
+    .course-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+    .course-card h3 {
+      font-size: 1.5rem;
+      color: #2c5364;
+      margin-bottom: 1rem;
+    }
+    .course-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .course-card::before {
+      content: '';
+      background-image: url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=861,h=512,fit=crop/mePxn01M5PF3PX6D/jij_technologies-removebg-preview-Yg2jZnEM5BuL8nLp.png');
+      background-size: 40px;
+      background-repeat: no-repeat;
+      background-position: top right;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      opacity: 0.9;
+    }
+    .details-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #0b2341;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .details-btn:hover {
+      background: #00d4ff;
+      color: #000;
+    }
+    footer {
+      background: #0b2341;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+     /* footer  */
+.site-footer {
+  background: linear-gradient(90deg, #00b4d8, #03045e);
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  font-weight: bolder;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-container > div {
+  flex: 1 1 220px;
+}
+
+.footer-about p,
+.footer-contact p,
+.footer-contact a {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.footer-social img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-social .social-icons {
+    justify-content: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>JIJ TECHNOLOGIES</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="reviews.html">Student Review</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="about.html">About</a>
+      <a href="placement.html">Placement</a>
+    </nav>
+  </header>
+
+  <section class="courses">
+    <h2>Our Courses</h2>
+    <div class="course-list">
+
+<div class="course-card">
+  <h3>Python Full Stack</h3>
+  <p>Master frontend and backend using Python, Django, HTML, CSS, and JavaScript. Build real-world web applications with hands-on projects.</p>
+  <a href="python-fullstack.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>Java Full Stack</h3>
+  <p>Learn to develop full-stack applications using Java, Spring Boot, and modern frontend frameworks. Ideal for enterprise development careers.</p>
+  <a href="java-fullstack.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>DevOps</h3>
+  <p>Understand CI/CD, Docker, Kubernetes, and automation tools. Learn how to bridge development and operations for faster delivery.</p>
+  <a href="devops.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>AWS</h3>
+  <p>Get trained in core AWS services including EC2, S3, Lambda, and more. Prepare for AWS certifications with real-time cloud experience.</p>
+  <a href="aws.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>Azure</h3>
+  <p>Learn Microsoft Azure cloud fundamentals including virtual machines, storage, and identity. Build scalable and secure cloud applications.</p>
+  <a href="azure.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>Google Cloud Platform (GCP)</h3>
+  <p>Master GCP services like Compute Engine, BigQuery, and Cloud Functions. Gain hands-on experience in building cloud-native apps.</p>
+  <a href="gcp.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>Data Analyst</h3>
+  <p>Learn Excel, SQL, Power BI, and Python to analyze and visualize data. Gain industry-ready skills for data-driven decision-making.</p>
+  <a href="data-analyst.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>Data Science</h3>
+  <p>Master Python, Machine Learning, and AI tools. Build predictive models and extract insights from data using real-world datasets.</p>
+  <a href="data-science.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>Automation Testing</h3>
+  <p>Learn Selenium, TestNG, JUnit, and automation frameworks. Build test scripts for web applications and enhance software quality assurance.</p>
+  <a href="testing.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>SAP</h3>
+  <p>Understand SAP modules like FICO, MM, and SD. Learn ERP concepts, data structures, and business processes used in global enterprises.</p>
+  <a href="sap.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>ServiceNow</h3>
+  <p>Get introduced to ITSM and automation through ServiceNow. Learn workflows, scripting, incident and change management, and app development.</p>
+  <a href="servicenow.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>Scrum Master</h3>
+  <p>Learn Agile principles, Scrum ceremonies, and team facilitation. Prepare for Scrum Master certification and manage successful Agile projects.</p>
+  <a href="scrum.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>UI/UX Design</h3>
+  <p>Design intuitive user interfaces with Figma and Adobe XD. Learn user research, wireframing, prototyping, and design thinking process.</p>
+  <a href="uiux.html" class="details-btn">View Details</a>
+</div>
+
+<div class="course-card">
+  <h3>Digital Marketing</h3>
+  <p>Master SEO, SEM, social media, email marketing, and analytics. Learn to run effective campaigns using tools like Google Ads and Analytics.</p>
+  <a href="digital_marketing.html" class="details-btn">View Details</a>
+</div>
+
+
+
+    </div>
+  </section>
+
+      <!--  footer   -->
+  <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>About JIJ Technologies</h3>
+      <p>JIJ Technologies is a leading institute offering in-demand tech courses like Java Full Stack, Data Science, DevOps, and more — designed to bridge the gap between learning and employment.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+    <nav>
+      <a href="index.html">Home</a> <br>
+      <a href="courses.html">Courses</a><br>
+      <a href="reviews.html">Student Review</a><br>
+      <a href="contact.html">Contact</a><br>
+      <a href="about.html">About</a><br>
+      <a href="placement.html">Placement</a>
+    </nav>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:support@jijtechnologies.com">contact@jijtechnologies.com</a></p>
+      <p>Phone: +91 86678 73893</p>
+      <p>Door No- 88/E , First Floor, The S Tower, West Main Road , Mettur dam</p>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="YouTube"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 JIJ TECHNOLOGIES. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

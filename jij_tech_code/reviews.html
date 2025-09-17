@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Reviews - JIJ TECHNOLOGIES</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      
+    }
+
+    body {
+      line-height: 1.6;
+      background: linear-gradient(to bottom right, #e0f7fa, #f1f8e9);
+      color: #333;
+        animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+    }
+    
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+     @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes rotate {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+      header {
+      background: linear-gradient(90deg, #00b4d8, #03045e);
+      color: #fff;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      border-bottom: 4px solid #90e0ef;
+      animation: fadeInUp 1s ease-out;
+    }
+
+  .header-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0 2rem;
+      height: 100%;
+}
+  .header-content {
+      flex: 1;
+      text-align: center;
+}
+
+    header h1 {
+      font-size: 2.8rem;
+      
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #f8f8f8;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #90e0ef;
+    }
+    @media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .left h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .left p {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .tags {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .left h1 {
+    font-size: 28px;
+  }
+
+  .left p {
+    font-size: 15px;
+  }
+
+  .buttons button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+    .contact {
+      padding: 3rem 2rem;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .reviews-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .reviews-section h2 {
+      font-size: 2rem;
+      color: #0b2341;
+      margin-bottom: 30px;
+    }
+
+    .review-card {
+      display: flex;
+      gap: 2rem;
+      padding: 20px;
+      margin-bottom: 30px;
+      align-items: center;
+      text-align: left;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .review-left {
+      flex: 1;
+    }
+
+    .review-name {
+      font-size: 1.5rem;
+      color: #003566;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    .review-left p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .review-right img {
+      width: 75px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .review-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .review-right img {
+        width: 200px;
+      }
+    }
+      iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+     /* footer  */
+.site-footer {
+  background: linear-gradient(90deg, #00b4d8, #03045e);
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  font-weight: bolder;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-container > div {
+  flex: 1 1 220px;
+}
+
+.footer-about p,
+.footer-contact p,
+.footer-contact a {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.footer-social img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-social .social-icons {
+    justify-content: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content"></div>
+    <h1>JIJ TECHNOLOGIES</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="reviews.html">Student Review</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="about.html">About</a>
+      <a href="placement.html">Placement</a>
+    </nav>
+    </div>
+  </header>
+
+  <section class="reviews-section">
+  <h2>What Our Students Say</h2>
+
+  <!-- Review 1 -->
+  <div class="review-card">
+    <div class="review-left">
+      <div class="review-name">Loshitha</div>
+      <div class="stars">★★★★★</div>
+      <p>
+        JIJ TECHNOLOGIES completely changed my professional life. I joined without any prior coding knowledge, but the structured learning, hands-on projects, and mentorship made a huge difference. I cracked interviews and got placed!
+      </p>
+    </div>
+    <div class="review-right">
+      <img src="women.png" alt="Aishwarya">
+    </div>
+  </div>
+
+
+  <!-- Review 3 -->
+  <div class="review-card">
+    <div class="review-left">
+      <div class="review-name">Rahul</div>
+      <div class="stars">★★★★☆</div>
+      <p>
+        The curriculum at JIJ TECHNOLOGIES is extremely industry-focused. With their excellent placement help, I got placed in TCS within 3 months of completing my course. The mock interviews helped a lot.
+      </p>
+    </div>
+    <div class="review-right">
+      <img src="men.png" alt="Rahul">
+    </div>
+  </div>
+
+   <!-- Review 3 -->
+<div class="review-card">
+    <div class="review-left">
+      <div class="review-name">Kavitha Murugan</div>
+      <div class="stars">★★★★☆</div> 
+      <p>
+     I had a 6-year career gap after completing my degree in 2016. I was nervous about starting again, but JIJ Technologies gave me the right training and guidance. The trainers were patient and supportive, and I really liked the one-on-one doubt sessions. It took me some time to adjust, but their constant encouragement helped me get placed in an MNC. I wish they had more weekend batches, but otherwise, they are excellent.  </p>
+    </div>
+    <div class="review-right">
+      <img src="women.png" alt="Kavitha Murugan">
+    </div>
+  </div>
+
+  <!-- Review 4 -->
+  <div class="review-card">
+    <div class="review-left">
+      <div class="review-name">Ananya Krishnan</div>
+      <div class="stars">★★★★★</div>
+      <p>
+       I joined JIJ Technologies for their software training courses, and it was one of the best decisions I've made. The trainers are extremely knowledgeable and break down even complex topics into easy-to-understand lessons. The hands-on projects helped me build confidence, and I was able to clear my job interview with ease. The staff is very supportive and approachable. Highly recommended for anyone serious about learning IT skills!  </p>
+    </div>
+    <div class="review-right">
+      <img src="men.png" alt="Ananya Krishnan">
+    </div>
+  </div>
+
+  <!-- Review 5 -->
+  <div class="review-card">
+    <div class="review-left">
+      <div class="review-name">Sneha</div>
+      <div class="stars">★★★★☆</div>
+      <p>
+        JIJ TECHNOLOGIES is the best place for beginners. The trainers explain from scratch with examples. I built projects and got confident to crack interviews. I’m now working as a software developer.
+      </p>
+    </div>
+    <div class="review-right">
+      <img src="women.png" alt="Sneha">
+    </div>
+  </div>
+
+<!-- Review 6 -->
+  <div class="review-card">
+    <div class="review-left">
+      <div class="review-name">Sundaramoorthy. M</div>
+      <div class="stars">★★★★★</div>
+      <p>
+        JIJ Technologies has a great learning environment with well-structured modules. I joined for their Python and web development courses, and I liked how practical the sessions were. The only thing I felt could improve was the number of mock tests, but otherwise, the training was excellent. Their placement support is genuine and helpful. </p>
+    </div>
+    <div class="review-right">
+      <img src="men.png" alt="Sundaramoorthy. M">
+    </div>
+  </div>
+
+
+  <!-- Review 7 -->
+  <div class="review-card">
+    <div class="review-left">
+      <div class="review-name">Thendralarasi</div>
+      <div class="stars">★★★★★</div>
+      <p>
+        The way they teach at JIJ Technologies is very different from other institutes. The trainers focus on real-world applications and make sure each student is comfortable with the topics before moving forward. The lab sessions are amazing, and they also give personal attention when needed. I got placed in a reputed company thanks to their guidance. Special thanks to my trainer for always motivating me.</p>
+    </div>
+    <div class="review-right">
+      <img src="women.png" alt="Thendralarasi">
+    </div>
+  </div>
+
+  
+  <!-- Review 8 -->
+  <div class="review-card">
+    <div class="review-left">
+      <div class="review-name">Vikram</div>
+      <div class="stars">★★★★☆</div>
+      <p>
+        Great experience with JIJ! The real-time tasks and coding sessions improved my skills drastically. I loved the mentorship and personal guidance from trainers. Totally recommend this place for full stack training.
+      </p>
+    </div>
+    <div class="review-right">
+      <img src="men.png" alt="Vikram">
+    </div>
+  </div>
+
+  <!-- Review 9 -->
+  <div class="review-card">
+    <div class="review-left">
+      <div class="review-name">Meera</div>
+      <div class="stars">★★★★☆</div>
+      <p>
+        I was a complete fresher when I joined JIJ TECHNOLOGIES. The well-structured curriculum, frequent assessments, and 1-on-1 sessions gave me a lot of confidence. I got selected for Wipro and Infosys.
+      </p>
+    </div>
+    <div class="review-right">
+      <img src="women.png" alt="Meera">
+    </div>
+  </div>
+
+  <!-- Review 10 -->
+  <div class="review-card">
+    <div class="review-left">
+      <div class="review-name">Karthik Balaji</div>
+      <div class="stars">★★★★★</div>
+      <p>
+        "I took their software testing course, and the training quality was very good. The faculty members have real-time industry experience, which helped us learn practical scenarios. They also conducted regular doubt-clearing sessions. The only minor issue was with class timings sometimes being shifted, but overall, it was a great experience. </p>
+    </div>
+    <div class="review-right">
+      <img src="men.png" alt="Karthik Balaji">
+    </div>
+  </div>
+
+</section>
+
+ <!--  footer   -->
+  <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>About JIJ Technologies</h3>
+      <p>JIJ Technologies is a leading institute offering in-demand tech courses like Java Full Stack, Data Science, DevOps, and more — designed to bridge the gap between learning and employment.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+    <nav>
+      <a href="index.html">Home</a> <br>
+      <a href="courses.html">Courses</a><br>
+      <a href="reviews.html">Student Review</a><br>
+      <a href="contact.html">Contact</a><br>
+      <a href="about.html">About</a><br>
+      <a href="placement.html">Placement</a>
+    </nav>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:support@jijtechnologies.com">contact@jijtechnologies.com</a></p>
+      <p>Phone: +91 86678 73893</p>
+      <p>Door No- 88/E , First Floor, The S Tower, West Main Road , Mettur dam</p>
+    </div>
+
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="YouTube"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 JIJ TECHNOLOGIES . All rights reserved.</p>
+  </div>
+</footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
+
+

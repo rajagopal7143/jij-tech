@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Placement Supports Highlight</title>
+  <style>
+    body {
+      background-color: #0b2341;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .highlight-box {
+      padding: 20px 40px;
+      background-color: rgba(57, 255, 20, 0.1); /* Light glow */
+      border: 2px solid #39ff14;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #39ff14;
+      animation: pulse 2s infinite;
+    }
+
+    .blinking-text {
+      color: #39ff14;
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 0 0 8px #39ff14, 0 0 16px #39ff14;
+      animation: blink 1.2s infinite;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon {
+      font-size: 36px;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 15px #39ff14; }
+      50% { box-shadow: 0 0 25px #39ff14; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="highlight-box">
+    <div class="blinking-text">
+      <span class="icon">🎯</span> Placement Supports
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+/* blink  */
+.highlight-box {
+  padding: 10px 10px;
+  background-color: rgba(57, 255, 20, 0.1); /* Light glow */
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #39ff14;
+  animation: pulse 2s infinite;
+  width: fit-content; /* Automatically adjusts to text content */
+  /* margin: auto; Optional: centers it if needed */
+}
+
+
+    .blinking-text {
+      color: #39ff14;
+      font-size: 10px;
+      font-weight: bold;
+      text-shadow: 0 0 8px #39ff14, 0 0 16px #39ff14;
+      animation: blink 1.2s infinite;
+      display: flex;
+      /* align-items: center; */
+      gap: 12px;
+    }
+
+    .icon {
+      font-size: 10px;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 15px #39ff14; }
+      50% { box-shadow: 0 0 25px #39ff14; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
